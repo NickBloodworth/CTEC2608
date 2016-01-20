@@ -6,5 +6,41 @@
 </head>
 <body>
     <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+        //this function will always be loaded
+        window.onload = function () {
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d')
+
+            drawFrame();
+
+            function drawFrame()
+            {
+                //draw the sprite
+                draw();
+            }
+            
+            //this function draws our sprite
+            function draw()
+            {
+                //start the line (path)
+                context.beginPath();
+                //set the start co-ordinated
+                context.moveTo(0, 0);
+                //draw the top line
+                context.lineTo(29, 0);
+                //draw the right side
+                context.lineTo(29, 29);
+                //draw the bottom line
+                context.lineTo(0, 29);
+                //close the path
+                context.closePath();
+                //fill the shape
+                context.fill();
+                //draw the line
+                context.stroke();
+            }
+        }
+    </script>
 </body>
 </html>
